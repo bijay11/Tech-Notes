@@ -73,7 +73,7 @@ const updateNote = asyncHandler(async (req, res) => {
   note.completed = completed;
 
   const updatedNote = await note.save();
-  res.json(`${updateNote.title} updated`);
+  res.json(`${updatedNote.title} updated`);
 });
 
 // @description Delete a note

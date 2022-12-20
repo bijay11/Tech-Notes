@@ -1,134 +1,242 @@
 {
-	"info": {
-		"_postman_id": "6630b705-ff97-4135-ab7c-743b2b76cab8",
-		"name": "Tech Notes",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "19569945"
-	},
-	"item": [
-		{
-			"name": "Users",
-			"item": [
-				{
-					"name": "users",
-					"request": {
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "   {\r\n        \"id\": \"6392bbdbf9eb1e47228c52d2\"\r\n    }"
-						},
-						"url": {
-							"raw": "http://localhost:3500/users",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3500",
-							"path": [
-								"users"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "users",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"username\": \"Jane\",\r\n    \"password\": \"testing\",\r\n    \"roles\": [\"Employee\"]\r\n}"
-						},
-						"url": {
-							"raw": "http://localhost:3500/users",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3500",
-							"path": [
-								"users"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "users",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "http://localhost:3500/users",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3500",
-							"path": [
-								"users"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "users",
-					"request": {
-						"method": "PATCH",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n        \"id\": \"6392bee94aaa242d1982d2f1\",\r\n        \"username\": \"Johny\",\r\n        \"roles\": [\r\n            \"Employee\"\r\n        ],\r\n        \"active\": true,\r\n        \"__v\": 0\r\n    }"
-						},
-						"url": {
-							"raw": "http://localhost:3500/users",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3500",
-							"path": [
-								"users"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		}
-	]
+  "info": {
+    "_postman_id": "6630b705-ff97-4135-ab7c-743b2b76cab8",
+    "name": "Tech Notes",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "19569945"
+  },
+  "item": [
+    {
+      "name": "Users",
+      "item": [
+        {
+          "name": "users",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "   {\r\n        \"id\": \"6392bbdbf9eb1e47228c52d2\"\r\n    }"
+            },
+            "url": {
+              "raw": "http://localhost:3500/users",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3500",
+              "path": [
+                "users"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "users",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"username\": \"Jane\",\r\n    \"password\": \"testing\",\r\n    \"roles\": [\"Employee, Manager, Admin\"]\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3500/users",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3500",
+              "path": [
+                "users"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "users",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "http://localhost:3500/users",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3500",
+              "path": [
+                "users"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "users",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n        \"id\": \"639fcfe10a63dccf9e10bb6e\",\r\n        \"username\": \"John\",\r\n        \"roles\": [\r\n            \"Employee\", \"Manager\"\r\n        ],\r\n        \"active\": true,\r\n        \"__v\": 0\r\n    }"
+            },
+            "url": {
+              "raw": "http://localhost:3500/users",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3500",
+              "path": [
+                "users"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Notes",
+      "item": [
+        {
+          "name": "notes",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3500/notes",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3500",
+              "path": [
+                "notes"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "notes",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{ \"user\" : \"639fcfb30a63dccf9e10bb69\", \"title\": \"Employee\", \"text\" :\"TestingTask\" }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3500/notes",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3500",
+              "path": [
+                "notes"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "notes",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": " { \"id\" : \"639fcfb30a63dccf9e10bb69\", \"user\":\"Jane\", \"title\":\"Employee\", \"text\": \"TestingTask 1\", \"completed\": false }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3500/notes",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3500",
+              "path": [
+                "notes"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "notes",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": " { \"id\" : \"639fcfb30a63dccf9e10bb69\" }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3500/notes",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3500",
+              "path": [
+                "notes"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
 }
