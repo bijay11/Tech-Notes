@@ -4,14 +4,13 @@ import { apiSlice } from "./../../app/api/apiSlice";
 const usersAdapter = createEntityAdapter({});
 const initialState = usersAdapter.getInitialState();
 
-export const usersAPiSlice = apiSlice.injectEndpoints({
+export const usersApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     getUsers: builder.query({
       query: () => "/users",
       validateStatus: (response, result) => {
         return (response.status === 200) & !result.isError;
       },
-      keepUnusedDataFor: 5,
       transformResponse: (responseData) => {
         const loadedUsers = responseData.map((user) => {
           user.id = user._id;
@@ -66,10 +65,10 @@ export const {
   useAddNewUserMutation,
   useUpdateUserMutation,
   useDeleteUserMutation,
-} = usersAPiSlice;
+} = usersApiSlice;
 
 // returns the query result object
-export const selectUsersResult = usersAPiSlice.endpoints.getUsers.select();
+export const selectUsersResult = usersApiSlice.endpoints.getUsers.select();
 
 //creates memoized selector
 const selectUsersData = createSelector(
