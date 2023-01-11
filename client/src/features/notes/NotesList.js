@@ -9,7 +9,14 @@ export const NotesList = () => {
     isSuccess,
     isError,
     error,
-  } = useGetNotesQuery();
+  } = useGetNotesQuery(undefined, {
+    //re-query the data every 15 secs
+    pollingInterval: 15000,
+
+    //if different window if focused and landed back,
+    refetchOnFocus: true,
+    refetchOnMountOrArgChange: true,
+  });
 
   if (isLoading) return <p>Loading...</p>;
   if (isError) return <p className="errmsg">{error?.data?.message}</p>;
