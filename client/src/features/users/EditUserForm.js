@@ -5,8 +5,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSave, faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import { ROLES } from "../../config/roles";
 
-const USER_REGEX = /^[A-Z]{3,20}$/;
-const PWD_REGEX = /^[A-Z0-9!@#$%]{4,12}$/;
+const USER_REGEX = /^[A-z]{3,20}$/;
+const PWD_REGEX = /^[A-z0-9!@#$%]{4,12}$/;
 
 export const EditUserForm = ({ user }) => {
   const [updateUser, { isLoading, isSuccess, isError, error }] =
@@ -18,7 +18,7 @@ export const EditUserForm = ({ user }) => {
 
   const navigate = useNavigate();
 
-  const [username, setUsername] = useState("");
+  const [username, setUsername] = useState(user.username);
   const [validUsername, setValidUsername] = useState(false);
   const [password, setPassword] = useState("");
   const [validPassword, setValidPassword] = useState(false);
@@ -28,6 +28,8 @@ export const EditUserForm = ({ user }) => {
   useEffect(() => {
     setValidUsername(USER_REGEX.test(username));
   }, [username]);
+
+  console.log("test username", USER_REGEX.test(username));
 
   useEffect(() => {
     setValidPassword(PWD_REGEX.test(password));
@@ -58,15 +60,16 @@ export const EditUserForm = ({ user }) => {
 
   const onSaveUserClicked = async () => {
     if (password) {
-      return await updateUser({
+      await updateUser({
         id: user.id,
         username,
         password,
         roles,
         active,
       });
+    } else {
+      updateUser({ id: user.id, username, roles, active });
     }
-    updateUser({ id: user.id, username, roles, active });
   };
 
   const onDeleteUserClicked = async () => {
@@ -76,7 +79,6 @@ export const EditUserForm = ({ user }) => {
   const options = Object.values(ROLES).map((role) => {
     return (
       <option key={role} value={role}>
-        {" "}
         {role}
       </option>
     );
