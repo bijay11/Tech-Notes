@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSave } from "@fortawesome/free-solid-svg-icons";
 
 export const NewNoteForm = ({ users }) => {
-  const [addNewNote, , { isLoading, isSuccess, isError, error }] =
+  const [addNewNote, { isLoading, isSuccess, isError, error }] =
     useAddNewNoteMutation();
   const navigate = useNavigate();
 
@@ -23,8 +23,8 @@ export const NewNoteForm = ({ users }) => {
   }, [isSuccess, navigate]);
 
   const onTitleChanged = ({ target }) => setTitle(target.value);
-  const onTextChanged = ({ target }) => setTitle(target.value);
-  const onUserIdChanged = ({ target }) => setTitle(target.value);
+  const onTextChanged = ({ target }) => setText(target.value);
+  const onUserIdChanged = ({ target }) => setUserId(target.value);
 
   const canSave = [title, text, userId].every(Boolean) && !isLoading;
 
