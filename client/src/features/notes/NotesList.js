@@ -9,7 +9,7 @@ export const NotesList = () => {
     isSuccess,
     isError,
     error,
-  } = useGetNotesQuery(undefined, {
+  } = useGetNotesQuery("notesList", {
     //re-query the data every 15 secs
     pollingInterval: 15000,
 

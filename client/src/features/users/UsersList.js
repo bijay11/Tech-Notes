@@ -9,7 +9,7 @@ const UsersList = () => {
     isSuccess,
     isError,
     error,
-  } = useGetUsersQuery(undefined, {
+  } = useGetUsersQuery("usersList", {
     //re-query the data every minute
     pollingInterval: 60000,
 
