@@ -19,7 +19,7 @@ export const EditNoteForm = ({ note, users }) => {
   const [title, setTitle] = useState(note.title);
   const [text, setText] = useState(note.text);
   const [completed, setCompleted] = useState(note.completed);
-  const [userId, setUserId] = useState(note.userId);
+  const [userId, setUserId] = useState(note.user);
 
   useEffect(() => {
     if (isSuccess || isDelSuccess) {
@@ -31,7 +31,7 @@ export const EditNoteForm = ({ note, users }) => {
   }, [isSuccess, isDelSuccess, navigate]);
   const onTitleChanged = ({ target }) => setTitle(target.value);
   const onTextChanged = ({ target }) => setText(target.value);
-  const onCompletedChanged = ({ target }) => setCompleted((prev) => !prev);
+  const onCompletedChanged = () => setCompleted((prev) => !prev);
   const onUserIdChanged = ({ target }) => setUserId(target.value);
 
   const canSave = [title, text, userId].every(Boolean) && !isLoading;

@@ -1,4 +1,5 @@
 import React from "react";
+import PulseLoader from "react-spinners/PulseLoader";
 import { useGetNotesQuery } from "./notesApiSlice";
 import { MemoizedNote } from "./Note";
 import { useAuth } from "../../hooks/useAuth";
@@ -21,7 +22,7 @@ export const NotesList = () => {
     refetchOnMountOrArgChange: true,
   });
 
-  if (isLoading) return <p>Loading...</p>;
+  if (isLoading) return <PulseLoader color="#fff" />;
   if (isError) return <p className="errmsg">{error?.data?.message}</p>;
 
   if (isSuccess) {

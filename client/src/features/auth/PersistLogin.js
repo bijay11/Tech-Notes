@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import PulseLoader from "react-spinners/PulseLoader";
 import { Link, Outlet } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useRefreshMutation } from "./authApiSlice";
@@ -41,7 +42,7 @@ export const PersistLogin = () => {
   if (!persist) {
     content = <Outlet />;
   } else if (isLoading) {
-    content = <p>Loading...</p>;
+    content = <PulseLoader color="#fff" />;
   } else if (isError) {
     content = (
       <p className="errmsg">

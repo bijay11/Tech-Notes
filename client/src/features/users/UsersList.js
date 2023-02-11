@@ -1,4 +1,5 @@
-import React from "react";
+import PulseLoader from "react-spinners/PulseLoader";
+
 import { useGetUsersQuery } from "./usersApiSlice";
 import { MemoizedUser } from "./User";
 
@@ -11,14 +12,14 @@ const UsersList = () => {
     error,
   } = useGetUsersQuery("usersList", {
     //re-query the data every minute
-    pollingInterval: 60000,
+    pollingInterval: 15000,
 
     //if different window if focused and landed back,
     refetchOnFocus: true,
     refetchOnMountOrArgChange: true,
   });
 
-  if (isLoading) return <p>Loading...</p>;
+  if (isLoading) return <PulseLoader color="#fff" />;
   if (isError) return <p className="errmsg">{error?.data?.message}</p>;
 
   if (isSuccess) {
