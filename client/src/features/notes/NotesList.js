@@ -1,6 +1,6 @@
 import React from "react";
 import { useGetNotesQuery } from "./notesApiSlice";
-import { Note } from "./Note";
+import { MemoizedNote } from "./Note";
 import { useAuth } from "../../hooks/useAuth";
 
 export const NotesList = () => {
@@ -38,7 +38,9 @@ export const NotesList = () => {
 
     const tableContent =
       filteredIds.length &&
-      filteredIds.map((noteId) => <Note key={noteId} noteId={noteId} />);
+      filteredIds.map((noteId) => (
+        <MemoizedNote key={noteId} noteId={noteId} />
+      ));
 
     return (
       <table className="table table--notes">

@@ -1,6 +1,6 @@
 import React from "react";
 import { useGetUsersQuery } from "./usersApiSlice";
-import { User } from "./User";
+import { MemoizedUser } from "./User";
 
 const UsersList = () => {
   const {
@@ -25,7 +25,8 @@ const UsersList = () => {
     const { ids } = users;
 
     const tableContent =
-      ids.length && ids.map((userId) => <User key={userId} userId={userId} />);
+      ids.length &&
+      ids.map((userId) => <MemoizedUser key={userId} userId={userId} />);
 
     return (
       <table className="table table--users">
