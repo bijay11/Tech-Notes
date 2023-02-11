@@ -4,8 +4,10 @@ import { EditNoteForm } from "./EditNoteForm";
 import { useGetNotesQuery } from "./notesApiSlice";
 import { useGetUsersQuery } from "../users/usersApiSlice";
 import { useAuth } from "../../hooks/useAuth";
+import { useTitle } from "./../../hooks/useTitle";
 
 export const EditNote = () => {
+  useTitle("Edit Note");
   const { id } = useParams();
 
   const { username, isManager, isAdmin } = useAuth();

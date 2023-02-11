@@ -3,8 +3,11 @@ import PulseLoader from "react-spinners/PulseLoader";
 import { useGetNotesQuery } from "./notesApiSlice";
 import { MemoizedNote } from "./Note";
 import { useAuth } from "../../hooks/useAuth";
+import { useTitle } from "./../../hooks/useTitle";
 
 export const NotesList = () => {
+  useTitle("Note List Page");
+
   const { username, isManager, isAdmin } = useAuth();
 
   const {
