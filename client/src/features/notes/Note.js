@@ -3,8 +3,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 import { useGetNotesQuery } from "./notesApiSlice";
+import { useTitle } from "./hooks/useTitle";
 
 const Note = ({ noteId }) => {
+  useTitle("Note Page");
+
   const { note } = useGetNotesQuery("notesList", {
     selectFromResult: ({ data }) => ({
       note: data?.entities[noteId],

@@ -2,8 +2,11 @@ import { useParams } from "react-router-dom";
 import PulseLoader from "react-spinners/PulseLoader";
 import { EditUserForm } from "./EditUserForm";
 import { useGetUsersQuery } from "./usersApiSlice";
+import { useTitle } from "./hooks/useTitle";
 
 export const EditUser = () => {
+  useTitle("Edit User Page");
+
   const { id } = useParams();
   const { user } = useGetUsersQuery("usersList", {
     selectFromResult: ({ data }) => ({
